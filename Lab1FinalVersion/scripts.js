@@ -67,6 +67,7 @@ function getFirstChildWithTagName( element, tagName ) {
 //Part C:
 var arr = [];
 
+//Preloading the images to the array
 arr[0]= new Image();
 arr[0].src = "image1.jpg";
 
@@ -87,8 +88,11 @@ function slide(){
     if(i == arr.length){
         i=0;
     }
-    setTimeout(function(){ slide(); },2500);
+
 }
+
+//Part C
+setInterval(function(){ slide(); }, 3000);
 
 //Part B
 window.document.body.onload = init;
@@ -101,5 +105,3 @@ document.getElementById("img1").addEventListener("dblclick",function(){
 document.getElementById("img2").addEventListener("dblclick",function(){
     myFunction1(this);
 });
-
-
