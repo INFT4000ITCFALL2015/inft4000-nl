@@ -1,7 +1,10 @@
 /**
  * Created by inet2005 on 9/28/15.
  */
+"use strict";
+
 //Part A:
+
 function myFunction(){
     document.getElementById("img1").style.zIndex = "1";
     document.getElementById("img2").style.opacity = "0.5";
@@ -16,7 +19,7 @@ function myFunction1(){
 //Part B:
 var accordionItems = new Array();
 
-function init() {
+function init () {
 
     // Get all the accordion items from the page
     var divs = document.getElementsByTagName( 'div' );
@@ -61,8 +64,6 @@ function getFirstChildWithTagName( element, tagName ) {
     }
 }
 
-
-
 //Part C:
 var arr = [];
 
@@ -88,3 +89,17 @@ function slide(){
     }
     setTimeout(function(){ slide(); },2500);
 }
+
+//Part B
+window.document.body.onload = init;
+
+//Part A
+document.getElementById("img1").addEventListener("dblclick",function(){
+    myFunction(this);
+});
+
+document.getElementById("img2").addEventListener("dblclick",function(){
+    myFunction1(this);
+});
+
+
