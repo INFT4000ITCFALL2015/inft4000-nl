@@ -86,5 +86,5 @@ function slide(){
     if(i == arr.length){
         i=0;
     }
-    setTimeout(function(){ slide(); },1000);
+    setTimeout(function(){ slide(); },2500);
 }
