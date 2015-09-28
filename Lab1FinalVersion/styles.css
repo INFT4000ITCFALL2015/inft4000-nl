@@ -1,0 +1,105 @@
+/*Design common for al files*/
+body{
+    background-color:#FFC0CB;
+}
+
+h1 {
+    font-size: 40px;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+p{
+    font-size: 19px;
+    text-align: justify;
+    line-height: 200%;
+}
+
+a:link {
+    color:#000000;
+    background-color:transparent;
+    text-decoration:none;
+    font-size: 35px;
+    color: 	#CC0052;
+}
+a:visited {
+    color:#000000;
+    background-color:transparent;
+    text-decoration:none;
+    color: 	#CC0052;
+
+}
+a:hover   {
+    color:#ff0000;
+    background-color:transparent;
+    text-decoration:underline;
+    color: 	#800033;
+}
+a:active  {
+    color:#ff0000;
+    background-color:transparent;
+    text-decoration:underline;
+    color: 	#800033;
+}
+
+footer{
+    width:100%;
+    height:80px;
+    position:absolute;
+    bottom:-120px;
+}
+
+/* Part B for accordion menu */
+.accordionItem h2 {
+    margin: 0;
+    font-size: 1.1em;
+    padding: 0.4em;
+    color: #fff;
+    background-color: #D490B4;
+    border-bottom: 1px solid #66d;
+}
+
+.accordionItem h2:hover {
+    cursor: pointer;
+}
+
+.accordionItem div {
+    margin: 0;
+    padding: 1em 0.4em;
+    background-color: white;
+    border-bottom: 1px solid #66d;
+}
+
+.accordionItem.hide h2 {
+    color: #000;
+    background-color: #E82A76;
+}
+
+.accordionItem.hide div {
+    display: none;
+}
+
+/* End of Part B */
+
+/* Part A  */
+#img1 {
+    position: absolute;
+    left: 350px;
+    top: 350px;
+    z-index: -1;
+}
+#img2 {
+    position: absolute;
+    left: 450px;
+    top: 450px;
+    z-index: 0;
+}
+
+/* End of Part A */
+/* Part C */
+#images{
+    position: relative;
+    margin: 15px 250px 100px 250px;
+
+}
+/* End of art C */
