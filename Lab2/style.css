@@ -1,0 +1,40 @@
+#targetJSON {
+    position: absolute;
+    left: 350px;
+    top: 250px;
+    z-index: -1;
+    width: 400px;
+    height: 400px;
+    overflow: scroll;
+
+    border: 5px rgb(21, 159, 249) solid;
+
+    padding: 100px;
+
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=39)";
+    filter: alpha(opacity=39);
+    -moz-opacity: 0.39;
+    -khtml-opacity: 0.39;
+    opacity: 0.39;
+
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+
+    background: rgba(226, 143, 143, 0);
+
+    color: rgb(25,25,25);
+    font-size: inherit;
+    font-weight: inherit;
+    font-family: inherit;
+    font-style: inherit;
+    text-decoration: inherit;
+    text-align: left;
+
+    line-height: 1.15em;
+
+    -moz-box-shadow:  3px 0px 15px 16px rgb(128,128,128);
+    -webkit-box-shadow:  3px 0px 15px 16px rgb(128,128,128);
+    box-shadow:  3px 0px 15px 16px rgb(128,128,128);
+
+}

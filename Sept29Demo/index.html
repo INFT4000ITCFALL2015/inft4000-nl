@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Object Demo</title>
+</head>
+<body>
+    <script>
+        /*var myCustomer = {fName: "Mike", lName: "Crocker", membership: "gold"};
+
+        document.write("First name:" + myCustomer.fName + "<br />");
+        document.write("Last name:" + myCustomer.lName + "<br />");
+        document.write("Membership:" + myCustomer.membership + "<br />");*/
+
+        function customer(first_name, last_name, member) {
+            this.fName = first_name;
+            this.lName = last_name;
+            this.membership = member;
+            this.report = function () {
+                return this.fName + " " + this.lName + " is a " + this.membership +
+                        " member.<br />";
+            };
+        }
+
+        var custOne = new customer("Tom", "Jones", "standard");
+        var custTwo = new customer("Jane", "Smith", "platinum");
+
+        document.write(custOne.report());
+        document.write(custTwo.report());
+
+    </script>
+</body>
+</html>
