@@ -14,7 +14,7 @@
 .sPuzzle, td {
     border-collapse: collapse;
     border: 5px outset gray;
-    color: black;
+   color: gray;
 }
 
 .sTable{
@@ -36,14 +36,11 @@ th{
 
 .greenBox {
     background: url(green.jpg) no-repeat 50% 50%;
-
 }
 
 .goldBox {
     background-image: url(gold.jpg);
     background-repeat:no-repeat;
     background-position:  50% 50%;
-
-
 }
 

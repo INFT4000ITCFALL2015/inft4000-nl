@@ -21,7 +21,6 @@
       <link rel="stylesheet" href="stable.css">
       <link rel="stylesheet" href="jpf.css" >
       <script src="modernizr-1.5.js"></script>
-      <script src="script.js"></script>
 
    </head>
 
@@ -69,7 +68,7 @@
 
       <section id="main">
 
-         <table class="spuzzle" >
+         <table class="sPuzzle" id="sPuzzle">
             <caption>SUDOKU</caption>
 
             <thead>
@@ -89,23 +88,23 @@
 
             <tbody>
             <tr>
-               <td><b>A</b></td>
+               <td>A</td>
                <td colspan="3" rowspan="3">
                   <table class="subTable">
                      <tr>
-                        <td class="greenBox" contenteditable="true" id="test" onkeyup="return validNumbers(this)">&nbsp;&nbsp;</td>
-                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="greenBox editable originalEmptyCell">&nbsp;&nbsp;</td>
+                        <td class="greenBox editable originalEmptyCell">&nbsp;&nbsp;</td>
                         <td class="greenBox">4</td>
                      </tr>
                      <tr>
-                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
-                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
-                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="greenBox editable originalEmptyCell">&nbsp;&nbsp;</td>
+                        <td class="greenBox editable originalEmptyCell">&nbsp;&nbsp;</td>
+                        <td class="greenBox editable originalEmptyCell">&nbsp;&nbsp;</td>
                      </tr>
                      <tr>
                         <td class="greenBox">3</td>
                         <td class="greenBox">5</td>
-                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="greenBox editable originalEmptyCell">&nbsp;&nbsp;</td>
                      </tr>
                   </table>
                </td>
@@ -113,17 +112,17 @@
                   <table class="subTable">
                      <tr>
                         <td class="greenBox">5</td>
-                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="greenBox editable originalEmptyCell">&nbsp;&nbsp;</td>
                         <td class="greenBox">3</td>
                      </tr>
                      <tr>
-                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
-                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
-                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="greenBox editable originalEmptyCell">&nbsp;&nbsp;</td>
+                        <td class="greenBox editable originalEmptyCell">&nbsp;&nbsp;</td>
+                        <td class="greenBox editable originalEmptyCell">&nbsp;&nbsp;</td>
                      </tr>
                      <tr>
-                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
-                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="greenBox editable originalEmptyCell">&nbsp;&nbsp;</td>
+                        <td class="greenBox editable originalEmptyCell">&nbsp;&nbsp;</td>
                         <td class="greenBox">9</td>
                      </tr>
                   </table>
@@ -131,41 +130,41 @@
                <td colspan="3" rowspan="3">
                   <table class="subTable">
                      <tr>
-                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="greenBox editable originalEmptyCell">&nbsp;&nbsp;</td>
                         <td class="greenBox">7</td>
-                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="greenBox editable originalEmptyCell">&nbsp;&nbsp;</td>
                      </tr>
                      <tr>
                         <td class="greenBox">3</td>
                         <td class="greenBox">1</td>
-                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="greenBox editable originalEmptyCell">&nbsp;&nbsp;</td>
                      </tr>
                      <tr>
                         <td class="greenBox">2</td>
-                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
-                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="greenBox editable originalEmptyCell">&nbsp;&nbsp;</td>
+                        <td class="greenBox editable originalEmptyCell">&nbsp;&nbsp;</td>
                      </tr>
                   </table>
                </td>
             </tr>
             <tr>
-               <td><b>B</b></td>
+               <td>B</td>
             </tr>
             <tr>
-               <td><b>C</b></td>
+               <td>C</td>
             </tr>
             <tr>
-               <td><b>D</b></td>
+               <td>D</td>
                <td colspan="3" rowspan="3">
                   <table class="subTable">
                      <tr>
-                        <td class="goldBox" contenteditable="true">&nbsp;&nbsp;</td>
-                        <td class="goldBox" contenteditable="true">&nbsp;&nbsp;</td>
-                        <td class="goldBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="goldBox editable originalEmptyCell">&nbsp;&nbsp;</td>
+                        <td class="goldBox editable originalEmptyCell">&nbsp;&nbsp;</td>
+                        <td class="goldBox editable originalEmptyCell">&nbsp;&nbsp;</td>
                      </tr>
                      <tr>
                         <td class="goldBox">6</td>
-                        <td class="goldBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="goldBox editable originalEmptyCell">&nbsp;&nbsp;</td>
                         <td class="goldBox">9</td>
                      </tr>
                      <tr>
@@ -178,19 +177,19 @@
                <td colspan="3" rowspan="3">
                   <table class="subTable">
                      <tr>
-                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="greenBox editable originalEmptyCell">&nbsp;&nbsp;</td>
                         <td class="greenBox">2</td>
-                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="greenBox editable originalEmptyCell">&nbsp;&nbsp;</td>
                      </tr>
                      <tr>
-                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
-                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
-                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="greenBox editable originalEmptyCell">&nbsp;&nbsp;</td>
+                        <td class="greenBox editable originalEmptyCell">&nbsp;&nbsp;</td>
+                        <td class="greenBox editable originalEmptyCell">&nbsp;&nbsp;</td>
                      </tr>
                      <tr>
-                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="greenBox editable originalEmptyCell">&nbsp;&nbsp;</td>
                         <td class="greenBox">9</td>
-                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="greenBox editable originalEmptyCell">&nbsp;&nbsp;</td>
                      </tr>
                   </table>
                </td>
@@ -203,55 +202,55 @@
                      </tr>
                      <tr>
                         <td class="goldBox">4</td>
-                        <td class="goldBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="goldBox editable originalEmptyCell">&nbsp;&nbsp;</td>
                         <td class="goldBox">8</td>
                      </tr>
                      <tr>
-                        <td class="goldBox" contenteditable="true">&nbsp;&nbsp;</td>
-                        <td class="goldBox" contenteditable="true">&nbsp;&nbsp;</td>
-                        <td class="goldBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="goldBox editable originalEmptyCell">&nbsp;&nbsp;</td>
+                        <td class="goldBox editable originalEmptyCell">&nbsp;&nbsp;</td>
+                        <td class="goldBox editable originalEmptyCell">&nbsp;&nbsp;</td>
                      </tr>
                   </table>
                </td>
             </tr>
-            <tr><td><b>E</b></td></tr>
-            <tr><td><b>F</b></td></tr>
+            <tr><td>E</td></tr>
+            <tr><td>F</td></tr>
             <tr>
-               <td><b>G</b></td>
+               <td>G</td>
                <td colspan="3" rowspan="3">
                   <table class="subTable">
                      <tr>
-                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
-                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="greenBox editable originalEmptyCell">&nbsp;&nbsp;</td>
+                        <td class="greenBox  editable originalEmptyCell">&nbsp;&nbsp;</td>
                         <td class="greenBox">1</td>
                      </tr>
                      <tr>
-                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="greenBox editable originalEmptyCell">&nbsp;&nbsp;</td>
                         <td class="greenBox">4</td>
-                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="greenBox editable originalEmptyCell">&nbsp;&nbsp;</td>
                      </tr>
                      <tr>
-                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="greenBox editable originalEmptyCell">&nbsp;&nbsp;</td>
                         <td class="greenBox">6</td>
-                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="greenBox editable originalEmptyCell">&nbsp;&nbsp;</td>
                      </tr>
                   </table>
                </td>
                <td colspan="3" rowspan="3">
                   <table class="subTable">
                      <tr>
-                        <td class="goldBox" contenteditable="true">&nbsp;&nbsp;</td>
-                        <td class="goldBox" contenteditable="true">&nbsp;&nbsp;</td>
-                        <td class="goldBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="goldBox editable originalEmptyCell">&nbsp;&nbsp;</td>
+                        <td class="goldBox editable originalEmptyCell">&nbsp;&nbsp;</td>
+                        <td class="goldBox editable originalEmptyCell">&nbsp;&nbsp;</td>
                      </tr>
                      <tr>
-                        <td class="goldBox" contenteditable="true">&nbsp;&nbsp;</td>
-                        <td class="goldBox" contenteditable="true">&nbsp;&nbsp;</td>
-                        <td class="goldBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="goldBox editable originalEmptyCell">&nbsp;&nbsp;</td>
+                        <td class="goldBox editable originalEmptyCell">&nbsp;&nbsp;</td>
+                        <td class="goldBox editable originalEmptyCell">&nbsp;&nbsp;</td>
                      </tr>
                      <tr>
                         <td class="goldBox">8</td>
-                        <td class="goldBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="goldBox editable originalEmptyCell">&nbsp;&nbsp;</td>
                         <td class="goldBox">1</td>
                      </tr>
                   </table>
@@ -259,37 +258,31 @@
                <td colspan="3" rowspan="3">
                   <table class="subTable">
                      <tr>
-                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="greenBox editable originalEmptyCell">&nbsp;&nbsp;</td>
                         <td class="greenBox">5</td>
                         <td class="greenBox">2</td>
                      </tr>
                      <tr>
-                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
-                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
-                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="greenBox editable originalEmptyCell">&nbsp;&nbsp;</td>
+                        <td class="greenBox editable originalEmptyCell">&nbsp;&nbsp;</td>
+                        <td class="greenBox editable originalEmptyCell" >&nbsp;&nbsp;</td>
                      </tr>
                      <tr>
                         <td class="greenBox">7</td>
-                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
-                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="greenBox editable originalEmptyCell">&nbsp;&nbsp;</td>
+                        <td class="greenBox editable originalEmptyCell">&nbsp;&nbsp;</td>
                      </tr>
                   </table>
                </td>
             </tr>
-            <tr><td><b>H</b></td></tr>
-            <tr><td><b>I</b></td></tr>
+            <tr><td>H</td></tr>
+            <tr><td>I</td></tr>
             </tbody>
 
          </table>
-         <!--<div id="example-one" contenteditable="true">
-            <style scoped>
-               #example-one { margin-bottom: 10px; }
-               [contenteditable="true"] { padding: 10px; outline: 2px dashed #CCC; }
-               [contenteditable="true"]:hover { outline: 2px dashed #0090D2; }
-            </style>
-            <p>Everything contained within this div is editable in browsers that support <code>HTML5</code>. Go on, give it a try: click it and start typing.</p>
-         </div>
-         -->
+         <br/>
+         <div class="topCorner"><input type='submit' value='Reset' id="btnReset" /></div>
+
          <article>
             <h1>To Play</h1>
             <p>Sudoku is played on a 9x9 grid with nine 3x3 boxes
@@ -304,7 +297,7 @@
          </article>
 
       </section>
-
+      <script src="script.js"></script>
    </body>
 
 </html>
