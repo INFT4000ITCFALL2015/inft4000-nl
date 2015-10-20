@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+   <!--
+      New Perspectives on HTML and CSS
+      Tutorial 5
+      Case Problem 1
+
+      Sudoku Puzzle
+      Author: 
+      Date:   
+
+      Filename:         sudoku.htm
+      Supporting files: gold.jpg, green.jpg, jpf.css, jpf.jpg, 
+                        modernizr-1.5.js, stable.css,
+   -->
+
+      <meta charset="UTF-8" />
+      <title>Daily Sudoku Puzzle</title>
+      <link rel="stylesheet" href="stable.css">
+      <link rel="stylesheet" href="jpf.css" >
+      <script src="modernizr-1.5.js"></script>
+      <script src="script.js"></script>
+
+   </head>
+
+   <body>
+      <header>
+         <img src="jpf.jpg" alt="The Japanese Puzzle Factory" />
+      </header>
+
+      <nav class="horizontal">
+         <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Online Puzzles</a></li>
+            <li><a href="#">Store</a></li>
+            <li><a href="#">Tips and Hints</a></li>
+            <li><a href="#">Forum</a></li>
+            <li><a href="#">Competitions</a></li>
+            <li><a href="#">Site Map</a></li>
+         </ul>
+      </nav>
+
+      <nav class="vertical">
+         <ul>
+            <li><a href="#">Akari</a></li>
+            <li><a href="#">Divide by Box</a></li>
+            <li><a href="#">Fillomino</a></li>
+            <li><a href="#">Hashiwokakero</a></li>
+            <li><a href="#">Heyawake</a></li>
+            <li><a href="#">Hitori</a></li>
+            <li><a href="#">Kakuro</a></li>
+            <li><a href="#">Katagaku</a></li>
+            <li><a href="#">Masugo</a></li>
+            <li><a href="#">Masyu</a></li>
+            <li><a href="#">Nonogram</a></li>
+            <li><a href="#">Oekaki Logic</a></li>
+            <li><a href="#">Shikaku</a></li>
+            <li><a href="#">Sudoku</a></li>
+            <li><a href="#">Suhai</a></li>
+            <li><a href="#">Super Sudoku</a></li>
+            <li><a href="#">Tenketsu</a></li>
+            <li><a href="#">Tentai Show</a></li>
+            <li><a href="#">Wordoku</a></li>
+            <li><a href="#">Yajilin</a></li>
+         </ul>
+      </nav>
+
+      <section id="main">
+
+         <table class="spuzzle" >
+            <caption>SUDOKU</caption>
+
+            <thead>
+            <tr>
+               <th>&nbsp;</th>
+               <th>1</th>
+               <th>2</th>
+               <th>3</th>
+               <th>4</th>
+               <th>5</th>
+               <th>6</th>
+               <th>7</th>
+               <th>8</th>
+               <th>9</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+               <td><b>A</b></td>
+               <td colspan="3" rowspan="3">
+                  <table class="subTable">
+                     <tr>
+                        <td class="greenBox" contenteditable="true" id="test" onkeyup="return validNumbers(this)">&nbsp;&nbsp;</td>
+                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="greenBox">4</td>
+                     </tr>
+                     <tr>
+                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                     </tr>
+                     <tr>
+                        <td class="greenBox">3</td>
+                        <td class="greenBox">5</td>
+                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                     </tr>
+                  </table>
+               </td>
+               <td colspan="3" rowspan="3" >
+                  <table class="subTable">
+                     <tr>
+                        <td class="greenBox">5</td>
+                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="greenBox">3</td>
+                     </tr>
+                     <tr>
+                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                     </tr>
+                     <tr>
+                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="greenBox">9</td>
+                     </tr>
+                  </table>
+               </td>
+               <td colspan="3" rowspan="3">
+                  <table class="subTable">
+                     <tr>
+                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="greenBox">7</td>
+                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                     </tr>
+                     <tr>
+                        <td class="greenBox">3</td>
+                        <td class="greenBox">1</td>
+                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                     </tr>
+                     <tr>
+                        <td class="greenBox">2</td>
+                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+            <tr>
+               <td><b>B</b></td>
+            </tr>
+            <tr>
+               <td><b>C</b></td>
+            </tr>
+            <tr>
+               <td><b>D</b></td>
+               <td colspan="3" rowspan="3">
+                  <table class="subTable">
+                     <tr>
+                        <td class="goldBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="goldBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="goldBox" contenteditable="true">&nbsp;&nbsp;</td>
+                     </tr>
+                     <tr>
+                        <td class="goldBox">6</td>
+                        <td class="goldBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="goldBox">9</td>
+                     </tr>
+                     <tr>
+                        <td class="goldBox">4</td>
+                        <td class="goldBox">7</td>
+                        <td class="goldBox">2</td>
+                     </tr>
+                  </table>
+               </td>
+               <td colspan="3" rowspan="3">
+                  <table class="subTable">
+                     <tr>
+                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="greenBox">2</td>
+                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                     </tr>
+                     <tr>
+                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                     </tr>
+                     <tr>
+                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="greenBox">9</td>
+                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                     </tr>
+                  </table>
+               </td>
+               <td colspan="3" rowspan="3">
+                  <table class="subTable">
+                     <tr>
+                        <td class="goldBox">9</td>
+                        <td class="goldBox">3</td>
+                        <td class="goldBox">7</td>
+                     </tr>
+                     <tr>
+                        <td class="goldBox">4</td>
+                        <td class="goldBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="goldBox">8</td>
+                     </tr>
+                     <tr>
+                        <td class="goldBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="goldBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="goldBox" contenteditable="true">&nbsp;&nbsp;</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+            <tr><td><b>E</b></td></tr>
+            <tr><td><b>F</b></td></tr>
+            <tr>
+               <td><b>G</b></td>
+               <td colspan="3" rowspan="3">
+                  <table class="subTable">
+                     <tr>
+                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="greenBox">1</td>
+                     </tr>
+                     <tr>
+                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="greenBox">4</td>
+                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                     </tr>
+                     <tr>
+                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="greenBox">6</td>
+                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                     </tr>
+                  </table>
+               </td>
+               <td colspan="3" rowspan="3">
+                  <table class="subTable">
+                     <tr>
+                        <td class="goldBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="goldBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="goldBox" contenteditable="true">&nbsp;&nbsp;</td>
+                     </tr>
+                     <tr>
+                        <td class="goldBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="goldBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="goldBox" contenteditable="true">&nbsp;&nbsp;</td>
+                     </tr>
+                     <tr>
+                        <td class="goldBox">8</td>
+                        <td class="goldBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="goldBox">1</td>
+                     </tr>
+                  </table>
+               </td>
+               <td colspan="3" rowspan="3">
+                  <table class="subTable">
+                     <tr>
+                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="greenBox">5</td>
+                        <td class="greenBox">2</td>
+                     </tr>
+                     <tr>
+                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                     </tr>
+                     <tr>
+                        <td class="greenBox">7</td>
+                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                        <td class="greenBox" contenteditable="true">&nbsp;&nbsp;</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+            <tr><td><b>H</b></td></tr>
+            <tr><td><b>I</b></td></tr>
+            </tbody>
+
+         </table>
+         <!--<div id="example-one" contenteditable="true">
+            <style scoped>
+               #example-one { margin-bottom: 10px; }
+               [contenteditable="true"] { padding: 10px; outline: 2px dashed #CCC; }
+               [contenteditable="true"]:hover { outline: 2px dashed #0090D2; }
+            </style>
+            <p>Everything contained within this div is editable in browsers that support <code>HTML5</code>. Go on, give it a try: click it and start typing.</p>
+         </div>
+         -->
+         <article>
+            <h1>To Play</h1>
+            <p>Sudoku is played on a 9x9 grid with nine 3x3 boxes
+               placed within the grid. Enter a digit from 1 to 9 in
+               each table cell. A few starting numbers have been
+               supplied for you. The digits from 1 to 9 can appear
+               only once each in every row, column, and box in the
+               table (diagonals don't count). Every Sudoku puzzle
+               has a unique solution.
+            </p>
+            <p>Good luck!</p>
+         </article>
+
+      </section>
+
+   </body>
+
+</html>
