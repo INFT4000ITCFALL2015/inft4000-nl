@@ -11,10 +11,10 @@
    Supporting Files: green.jpg, gold.jpg
 
 */
-.sPuzzle, td {
+.sPuzzle, td, tr {
     border-collapse: collapse;
     border: 5px outset gray;
-   color: gray;
+    color: gray;
 }
 
 .sTable{
@@ -35,12 +35,14 @@ th{
 
 
 .greenBox {
-    background: url(green.jpg) no-repeat 50% 50%;
+    background: url(green.jpg);
+    background-repeat:no-repeat;
+    background-position:center;
 }
 
 .goldBox {
     background-image: url(gold.jpg);
     background-repeat:no-repeat;
-    background-position:  50% 50%;
+    background-position:center;
 }
 
