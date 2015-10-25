@@ -30,10 +30,10 @@ function validNumberCheck(curObj){
     var myRegExp = new RegExp(/^[1-9]$/);
 
     if(myRegExp.test(curObjValue)){
-        var rowValue = rowCheck(curObj);
+        //var rowValue = rowCheck(curObj);
         var columnValue = columnCheck(curObj);
-        var boxValue = boxCheck(curObj);
-       return (rowValue && columnValue && boxValue);
+        //var boxValue = boxCheck(curObj);
+       return (columnValue);
     }
     else{
         alert('You need to enter a number between 1-9');
@@ -59,10 +59,10 @@ function rowCheck(entry){
                 var columnSelected = "col"+(1+col);
                 var columns = document.getElementsByClassName(columnSelected);
 
-                var colValue = columns[0].textContent.trim();
+                var colValue = parseInt(columns[i].textContent.trim());
 
                 if(columnSelected != colNumber){
-                    if (entry.textContent.trim() == colValue) {
+                    if (parseInt(entry.textContent) == colValue) {
 
                     alert("Repeat same entry");
                     entry.style.color = 'red';
@@ -82,9 +82,6 @@ function rowCheck(entry){
 function columnCheck(entry){
     // get the row, column, and box class for the current entry
     var classList = entry.classList;
-
-
-    alert (boxName[0]);
     var rowNumber = classList[1]; //class name of the row
     var colNumber = classList[2]
     var columns = document.getElementsByClassName(colNumber);//value to get the row number from the class list
@@ -99,7 +96,7 @@ function columnCheck(entry){
                 var rowSelected = "row"+(1+row);
                 var rows = document.getElementsByClassName(rowSelected);
 
-                var rowValue = rows[0].textContent.trim();
+                var rowValue = parseInt(rows[col].textContent.trim());
 
                 if(rowSelected != rowNumber){
                     if (entry.textContent.trim() == rowValue) {
@@ -120,14 +117,39 @@ function columnCheck(entry){
 }
 function boxCheck(entry){
     // get the row, column, and box class for the current entry
-    var boxName = document.getElementsByTagName("table");
-    alert (boxName);
+
+
     var classList = entry.classList;
+    var boxNumber = classList[3];
+    var colNumber = parseInt(classList[2].charAt(3));
+    var rowNumber = parseInt(classList[1].charAt(3));
 
-    var rowNumber = classList[1]; //class name of the row
+    var boxCol = boxNumber.charAt(4);
+    var boxRow = parseInt(boxNumber.charAt(3));
 
-    //var columns = document.getElementsByClassName(colNumber);//value to get the row number from the class list
 
+    alert(boxNumber+" "+ boxRow +" "+boxCol+" "+ colNumber +" "+rowNumber +" "+ boxCol*3);
+
+    var scanrow, scancol;
+
+    for(scanrow = boxRow*3-2; scanrow < (boxRow * 3 + 1 ); scanrow++){
+        for(scancol = boxCol*3-2; scancol <(boxCol * 3 + 1); scancol++) {
+           if(scancol != colNumber || scanrow != rowNumber){
+               //entry.textContent.trim() == rowValue;
+               alert(scanrow +" "+scancol);
+
+
+           }
+        }
+    }
+
+    //for(var j=0; j<9; j++){
+    //
+    //    for(var i=0; i<9; i++){
+    //        alert("OK");
+    //    }
+    //
+    //}
 
 }
 
