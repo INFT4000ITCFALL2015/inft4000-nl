@@ -30,10 +30,10 @@ function validNumberCheck(curObj){
     var myRegExp = new RegExp(/^[1-9]$/);
 
     if(myRegExp.test(curObjValue)){
-        //var rowValue = rowCheck(curObj);
+        var rowValue = rowCheck(curObj);
         var columnValue = columnCheck(curObj);
-        //var boxValue = boxCheck(curObj);
-       return (columnValue);
+        var boxValue = boxCheck(curObj);
+       return (boxValue);
     }
     else{
         alert('You need to enter a number between 1-9');
@@ -99,12 +99,12 @@ function columnCheck(entry){
                 var rowValue = parseInt(rows[col].textContent.trim());
 
                 if(rowSelected != rowNumber){
-                    if (entry.textContent.trim() == rowValue) {
+                    if (parseInt(entry.textContent)== rowValue) {
 
                         alert("Repeat same entry");
                         entry.style.color = 'red';
                         return false;
-                    }
+                    }//end if
                 }
 
             }
@@ -115,6 +115,8 @@ function columnCheck(entry){
     }
     //end column checking
 }
+
+
 function boxCheck(entry){
     // get the row, column, and box class for the current entry
 
@@ -128,29 +130,28 @@ function boxCheck(entry){
     var boxRow = parseInt(boxNumber.charAt(3));
 
 
-    alert(boxNumber+" "+ boxRow +" "+boxCol+" "+ colNumber +" "+rowNumber +" "+ boxCol*3);
+
 
     var scanrow, scancol;
 
     for(scanrow = boxRow*3-2; scanrow < (boxRow * 3 + 1 ); scanrow++){
+
+
         for(scancol = boxCol*3-2; scancol <(boxCol * 3 + 1); scancol++) {
+            var columns = document.getElementsByClassName("col"+scancol);
+
+            var colValue = parseInt(columns[scanrow-1].textContent.trim());
            if(scancol != colNumber || scanrow != rowNumber){
-               //entry.textContent.trim() == rowValue;
-               alert(scanrow +" "+scancol);
-
-
-           }
-        }
-    }
-
-    //for(var j=0; j<9; j++){
-    //
-    //    for(var i=0; i<9; i++){
-    //        alert("OK");
-    //    }
-    //
-    //}
-
+               if(entry.textContent.trim() == colValue){
+                   alert("Repeat same entry");
+                   entry.style.color = 'red';
+                   return false;
+               }//end if
+           }//end if
+        }//end for
+    }//end for
+    entry.style.color = 'green';
+    return true;
 }
 
 window.document.body.onload = setEditableTrueAndValidateNumber;
