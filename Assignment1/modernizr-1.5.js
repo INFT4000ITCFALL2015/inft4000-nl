@@ -14,7 +14,7 @@
  * LicenseModernizr is available under the MIT and BSD licenses:
 
  * MIT License
- * Copyright (c) 2009–2010 Faruk Ate?
+ * Copyright (c) 2009ï¿½2010 Faruk Ate?
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
@@ -99,7 +99,7 @@ window.Modernizr = (function(window,doc,undefined){
     
     
     /**
-     * fontfaceCheckDelay is the ms delay before the @font-face test is
+     * fontfaceCheckDelay is the ms delay before the @font-face test.html is
      * checked a second time. This is neccessary because both Gecko and
      * WebKit do not load data: URI font data synchronously.
      *   https://bugzilla.mozilla.org/show_bug.cgi?id=512566
@@ -264,7 +264,7 @@ window.Modernizr = (function(window,doc,undefined){
     }
 
     /**
-     * test_props is a generic CSS / DOM property test; if a browser supports
+     * test_props is a generic CSS / DOM property test.html; if a browser supports
      *   a certain property, it won't return undefined for it.
      *   A supported CSS property returns empty string when its not yet set.
      */
@@ -319,14 +319,14 @@ window.Modernizr = (function(window,doc,undefined){
     };
     
     /**
-     * The Modernizr.touch test only indicates if the browser supports
+     * The Modernizr.touch test.html only indicates if the browser supports
      *    touch events, which does not necessarily reflect a touchscreen
      *    device, as evidenced by tablets running Windows 7 or, alas,
      *    the Palm Pre / WebOS (touch) phones.
      * Additionally, chrome used to lie about its support on this, but that 
      *    has since been recitifed: http://crbug.com/36415
      * Because there is no way to reliably detect Chrome's false positive 
-     *    without UA sniffing we have removed this test from Modernizr. We 
+     *    without UA sniffing we have removed this test.html from Modernizr. We
      *    hope to add it in after Chrome 5 has been sunsetted. 
      * See also http://github.com/Modernizr/Modernizr/issues#issue/84
      
@@ -339,7 +339,7 @@ window.Modernizr = (function(window,doc,undefined){
 
     /**
      * geolocation tests for the new Geolocation API specification.
-     *   This test is a standards compliant-only test; for more complete
+     *   This test.html is a standards compliant-only test.html; for more complete
      *   testing, including a Google Gears fallback, please see:
      *   http://code.google.com/p/geo-location-javascript/
      * or view a fallback solution using google's geo API:
@@ -357,7 +357,7 @@ window.Modernizr = (function(window,doc,undefined){
       var result = !!window.openDatabase;
       if (result){
         try {
-          result = !!openDatabase("testdb", "1.0", "html5 test db", 200000);
+          result = !!openDatabase("testdb", "1.0", "html5 test.html db", 200000);
         } catch(err) {
           result = false;
         }
@@ -426,11 +426,11 @@ window.Modernizr = (function(window,doc,undefined){
     };
     
     
-    // In testing support for a given CSS property, it's legit to test:
+    // In testing support for a given CSS property, it's legit to test.html:
     //    elem.style[styleName] !== undefined
     // If the property is supported it will return an empty string,
     // if unsupported it will return undefined.
-    // We'll take advantage of this quick test and skip setting a style 
+    // We'll take advantage of this quick test.html and skip setting a style
     // on our modernizr element, but instead just testing undefined vs
     // empty string.
     // The legacy set_css_all calls will remain in the source 
@@ -566,7 +566,7 @@ window.Modernizr = (function(window,doc,undefined){
   
         else {
       
-          // Create variables for dedicated @font-face test
+          // Create variables for dedicated @font-face test.html
           var st  = doc.createElement('style'),
             spn = doc.createElement('span'),
             size, isFakeBody = false, body = doc.body,
@@ -756,8 +756,8 @@ window.Modernizr = (function(window,doc,undefined){
                     f.value = smile;
                     
                     /* Safari 4 is allowing the smiley as a value, and incorrecty failing..
-                       the test fixes for webkit only, but breaks Opera.. 
-                    if (/range/.test(f.type)){
+                       the test.html fixes for webkit only, but breaks Opera..
+                    if (/range/.test.html(f.type)){
                       bool =  test_props_all('appearance',function(prop,m){ return m_style[prop] !== 'textfield' })  
                     } 
                     */
@@ -784,14 +784,14 @@ window.Modernizr = (function(window,doc,undefined){
 
 
 
-    // end of test definitions
+    // end of test.html definitions
 
 
     // Run through all tests and detect their support in the current UA.
     // todo: hypothetically we could be doing an array of tests and use a basic loop here.
     for ( var feature in tests ) {
         if ( hasOwnProperty( tests, feature ) ) {
-            // run the test, throw the return value into the Modernizr,
+            // run the test.html, throw the return value into the Modernizr,
             //   then based on that boolean, define an appropriate className
             //   and push it into an array of classes we'll join later.
             classes.push( ( ( ret[ feature.toLowerCase() ] = tests[ feature ]() ) ?  '' : 'no-' ) + feature.toLowerCase() );
@@ -818,7 +818,7 @@ window.Modernizr = (function(window,doc,undefined){
       feature = feature.toLowerCase();
       
       if (ret[ feature ]) {
-        return; // quit if you're trying to overwrite an existing test
+        return; // quit if you're trying to overwrite an existing test.html
       } 
       test = !!(test());
       docElement.className += ' ' + (test ? '' : 'no-') + feature; 
