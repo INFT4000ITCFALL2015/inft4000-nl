@@ -33,7 +33,20 @@ function validNumberCheck(curObj){
         var rowValue = rowCheck(curObj);
         var columnValue = columnCheck(curObj);
         var boxValue = boxCheck(curObj);
-       return (boxValue);
+
+        if (rowCheck(curObj)==true){
+            if (columnCheck(curObj)==true){
+                if (boxCheck(curObj)==true){
+                    curObj.style.color = "green";
+                    return true;
+                }
+            }
+        }
+        else {
+            alert("Repeat same entry");
+            curObj.style.color = "red";
+            return true;
+        }
     }
     else{
         alert('You need to enter a number between 1-9');
@@ -64,14 +77,14 @@ function rowCheck(entry){
                 if(columnSelected != colNumber){
                     if (parseInt(entry.textContent) == colValue) {
 
-                    alert("Repeat same entry");
-                    entry.style.color = 'red';
+                    //alert("Repeat same entry");
+                    //entry.style.color = 'red';
                     return false;
                 }
                 }
 
             }
-            entry.style.color = 'green';
+            //entry.style.color = 'green';
             return true;
         }//end for
 
@@ -101,14 +114,14 @@ function columnCheck(entry){
                 if(rowSelected != rowNumber){
                     if (parseInt(entry.textContent)== rowValue) {
 
-                        alert("Repeat same entry");
-                        entry.style.color = 'red';
+              //          alert("Repeat same entry");
+                //        entry.style.color = 'red';
                         return false;
                     }//end if
                 }
 
             }
-            entry.style.color = 'green';
+            //entry.style.color = 'green';
             return true;
         }//end for
 
@@ -129,9 +142,6 @@ function boxCheck(entry){
     var boxCol = boxNumber.charAt(4);
     var boxRow = parseInt(boxNumber.charAt(3));
 
-
-
-
     var scanrow, scancol;
 
     for(scanrow = boxRow*3-2; scanrow < (boxRow * 3 + 1 ); scanrow++){
@@ -143,14 +153,14 @@ function boxCheck(entry){
             var colValue = parseInt(columns[scanrow-1].textContent.trim());
            if(scancol != colNumber || scanrow != rowNumber){
                if(entry.textContent.trim() == colValue){
-                   alert("Repeat same entry");
-                   entry.style.color = 'red';
+              //     alert("Repeat same entry");
+                //   entry.style.color = 'red';
                    return false;
                }//end if
            }//end if
         }//end for
     }//end for
-    entry.style.color = 'green';
+    //entry.style.color = 'green';
     return true;
 }
 
