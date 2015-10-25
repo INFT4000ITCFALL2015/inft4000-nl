@@ -1,13 +1,17 @@
 "use strict";
 
-function setEditableTrue() {
+function setEditableTrueAndValidateNumber() {
       var contentEditable = document.getElementsByClassName('editable');
       for(var i=0; i < contentEditable.length; i++) {
           contentEditable[i].setAttribute('contenteditable', true);
           contentEditable[i].addEventListener('keyup', function () {
-              var validNumber = validNumberCheck(this);
-              this.innerHTML = validNumber.textContent;
 
+              if (validNumberCheck(this)) {
+
+                  this.innerHTML = this.textContent;
+              }
+              else
+                  this.innerHTML = "&nbsp;&nbsp;";
           });
       }
 
@@ -27,12 +31,13 @@ function validNumberCheck(curObj){
 
     if(myRegExp.test(curObjValue)){
         var rowValue = rowCheck(curObj);
-        var columnValue = columnCheck(rowValue);
-       return columnValue;
+        var columnValue = columnCheck(curObj);
+        var boxValue = boxCheck(curObj);
+       return (rowValue && columnValue && boxValue);
     }
     else{
         alert('You need to enter a number between 1-9');
-        return "&nbsp;&nbsp;";
+        return false;
     }
 }
 
@@ -61,13 +66,13 @@ function rowCheck(entry){
 
                     alert("Repeat same entry");
                     entry.style.color = 'red';
-                    return entry;
+                    return false;
                 }
                 }
 
             }
             entry.style.color = 'green';
-            return entry;
+            return true;
         }//end for
 
     }
@@ -77,6 +82,9 @@ function rowCheck(entry){
 function columnCheck(entry){
     // get the row, column, and box class for the current entry
     var classList = entry.classList;
+
+
+    alert (boxName[0]);
     var rowNumber = classList[1]; //class name of the row
     var colNumber = classList[2]
     var columns = document.getElementsByClassName(colNumber);//value to get the row number from the class list
@@ -98,17 +106,30 @@ function columnCheck(entry){
 
                         alert("Repeat same entry");
                         entry.style.color = 'red';
-                        return entry;
+                        return false;
                     }
                 }
 
             }
             entry.style.color = 'green';
-            return entry;
+            return true;
         }//end for
 
     }
     //end column checking
 }
-window.document.body.onload = setEditableTrue;
+function boxCheck(entry){
+    // get the row, column, and box class for the current entry
+    var boxName = document.getElementsByTagName("table");
+    alert (boxName);
+    var classList = entry.classList;
+
+    var rowNumber = classList[1]; //class name of the row
+
+    //var columns = document.getElementsByClassName(colNumber);//value to get the row number from the class list
+
+
+}
+
+window.document.body.onload = setEditableTrueAndValidateNumber;
 document.getElementById("btnReset").addEventListener("click",reset);
