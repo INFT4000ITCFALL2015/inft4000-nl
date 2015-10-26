@@ -7,14 +7,16 @@ function setEditableTrueAndValidateNumber() {
           contentEditable[i].addEventListener('keyup', function () {
 
               if (validNumberCheck(this)) {
-
                   this.innerHTML = this.textContent;
+                  if(checkEnd(this)==true){
+                      alert("Game over");
+                  }
+                  //else continue;
               }
               else
                   this.innerHTML = "&nbsp;&nbsp;";
           });
       }
-
 }
 
 
@@ -30,15 +32,13 @@ function validNumberCheck(curObj){
     var myRegExp = new RegExp(/^[1-9]$/);
 
     if(myRegExp.test(curObjValue)){
-        var rowValue = rowCheck(curObj);
-        var columnValue = columnCheck(curObj);
-        var boxValue = boxCheck(curObj);
 
         if (rowCheck(curObj)==true){
             if (columnCheck(curObj)==true){
                 if (boxCheck(curObj)==true){
                     curObj.style.color = "green";
                     return true;
+
                 }
             }
         }
@@ -60,8 +60,6 @@ function rowCheck(entry){
     var rowNumber = classList[1]; //class name of the row
     var colNumber = classList[2]
 
-    var rows = document.getElementsByClassName(rowNumber);//value to get the row number from the class list
-
     //checking row
     for(var i = 0; i < 9; i++) {
         var rowSelected = "row" + (i + 1);
@@ -77,14 +75,12 @@ function rowCheck(entry){
                 if(columnSelected != colNumber){
                     if (parseInt(entry.textContent) == colValue) {
 
-                    //alert("Repeat same entry");
-                    //entry.style.color = 'red';
                     return false;
                 }
                 }
 
             }
-            //entry.style.color = 'green';
+
             return true;
         }//end for
 
@@ -96,8 +92,6 @@ function columnCheck(entry){
     // get the row, column, and box class for the current entry
     var classList = entry.classList;
     var rowNumber = classList[1]; //class name of the row
-    var colNumber = classList[2]
-    var columns = document.getElementsByClassName(colNumber);//value to get the row number from the class list
 
     //checking row
     for(var col = 0; col < 9; col++) {
@@ -114,14 +108,12 @@ function columnCheck(entry){
                 if(rowSelected != rowNumber){
                     if (parseInt(entry.textContent)== rowValue) {
 
-              //          alert("Repeat same entry");
-                //        entry.style.color = 'red';
                         return false;
                     }//end if
                 }
 
             }
-            //entry.style.color = 'green';
+
             return true;
         }//end for
 
@@ -129,23 +121,34 @@ function columnCheck(entry){
     //end column checking
 }
 
+function checkEnd(entry){
+    var classList = entry.classList;
+    var rows = classList[1];
+    var cols = classList[2];
+    var i; var j;
+    for(i = 0; i < 9; i++){
+        for(j = 0; j < 9; j++) {
+                if(rows[i]!="&nbsp;&nbsp;" && cols[j]!="&nbsp;&nbsp;"){
+                    return true;
+                }//end if
+                else return false;
+        }//end for
+    }//end for
+}
 
 function boxCheck(entry){
     // get the row, column, and box class for the current entry
-
-
     var classList = entry.classList;
     var boxNumber = classList[3];
     var colNumber = parseInt(classList[2].charAt(3));
     var rowNumber = parseInt(classList[1].charAt(3));
 
-    var boxCol = boxNumber.charAt(4);
+    var boxCol = parseInt(boxNumber.charAt(4));
     var boxRow = parseInt(boxNumber.charAt(3));
 
     var scanrow, scancol;
 
     for(scanrow = boxRow*3-2; scanrow < (boxRow * 3 + 1 ); scanrow++){
-
 
         for(scancol = boxCol*3-2; scancol <(boxCol * 3 + 1); scancol++) {
             var columns = document.getElementsByClassName("col"+scancol);
@@ -153,16 +156,15 @@ function boxCheck(entry){
             var colValue = parseInt(columns[scanrow-1].textContent.trim());
            if(scancol != colNumber || scanrow != rowNumber){
                if(entry.textContent.trim() == colValue){
-              //     alert("Repeat same entry");
-                //   entry.style.color = 'red';
+
                    return false;
                }//end if
            }//end if
         }//end for
     }//end for
-    //entry.style.color = 'green';
     return true;
 }
 
 window.document.body.onload = setEditableTrueAndValidateNumber;
+
 document.getElementById("btnReset").addEventListener("click",reset);
