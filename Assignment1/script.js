@@ -1,22 +1,42 @@
 "use strict";
-
+//var seconds= 0;
+//var countdownTimer = setInterval('setEditableTrueAndValidateNumber()', 1000);
 function setEditableTrueAndValidateNumber() {
+
+    //var minutes = Math.round((seconds - 30)/60);
+    //var remainingSeconds = seconds % 60;
+    //if (remainingSeconds < 1) {
+    //    remainingSeconds = "0" + remainingSeconds;
+    //}
+    //document.getElementById('countdown').innerHTML = minutes + ":" + remainingSeconds;
+    //
+    //    seconds++;
+
       var contentEditable = document.getElementsByClassName('editable');
       for(var i=0; i < contentEditable.length; i++) {
           contentEditable[i].setAttribute('contenteditable', true);
+          if(contentEditable[i].innerHTML != "&nbsp;&nbsp;"){
+              alert("Over");
+          }
           contentEditable[i].addEventListener('keyup', function () {
+
 
               if (validNumberCheck(this)) {
                   this.innerHTML = this.textContent;
-                  if(checkEnd(this)==true){
-                      alert("Game over");
-                  }
-                  //else continue;
+
+
+                  //if(checkEnd(this)==false){
+                  //   alert("Over");
+                  //}
               }
               else
                   this.innerHTML = "&nbsp;&nbsp;";
           });
       }
+    //alert(contentEditable[0].innerHTML);
+
+
+
 }
 
 
@@ -24,6 +44,18 @@ function reset(){
     var originalEmptyCell = document.getElementsByClassName('editable');
     for(var i=0; i<originalEmptyCell.length; i++) {
         originalEmptyCell[i].innerHTML = "&nbsp;&nbsp;";
+    }
+}
+
+function showResult(){
+    var resultVal =[1,2,8,9,6,7,6,2,4,7,1,8,9,8,9,5,4,6,
+                    5,1,8,3,4,6,7,1,5,3,8,2,5,6,1,
+                    7,8,9,2,3,9,3,4,6,7,2,5,6,1,8,3,9,4];
+
+    var originalEmptyCell = document.getElementsByClassName('editable');
+    for(var i=0; i<originalEmptyCell.length; i++) {
+        originalEmptyCell[i].innerHTML = resultVal[i];
+        originalEmptyCell[i].style.color ="blue";
     }
 }
 
@@ -57,7 +89,6 @@ function validNumberCheck(curObj){
 function rowCheck(entry){
     // get the row, column, and box class for the current entry
     var classList = entry.classList;
-    var rowNumber = classList[1]; //class name of the row
     var colNumber = classList[2]
 
     //checking row
@@ -122,18 +153,35 @@ function columnCheck(entry){
 }
 
 function checkEnd(entry){
+
     var classList = entry.classList;
-    var rows = classList[1];
-    var cols = classList[2];
-    var i; var j;
-    for(i = 0; i < 9; i++){
-        for(j = 0; j < 9; j++) {
-                if(rows[i]!="&nbsp;&nbsp;" && cols[j]!="&nbsp;&nbsp;"){
-                    return true;
-                }//end if
+    var colNumber = classList[2]
+
+    //checking row
+    for(var i = 0; i < 9; i++) {
+        var rowSelected = "row" + (i + 1);
+        if (rowSelected == classList[1]) {
+
+            for (var j = 0; j < 9; j++) {
+                var rows = document.getElementsByClassName(rowSelected);
+
+                var rowValue = rows[j].innerHTML;
+
+                //if(columnSelected != colNumber){
+                    if (rowValue =="&nbsp;&nbsp;") {
+
+                        return true;
+                   }
                 else return false;
+                //}
+
+            }
+
+            return true;
         }//end for
-    }//end for
+
+    }
+
 }
 
 function boxCheck(entry){
@@ -154,7 +202,7 @@ function boxCheck(entry){
             var columns = document.getElementsByClassName("col"+scancol);
 
             var colValue = parseInt(columns[scanrow-1].textContent.trim());
-           if(scancol != colNumber || scanrow != rowNumber){
+            if(scancol != colNumber || scanrow != rowNumber){
                if(entry.textContent.trim() == colValue){
 
                    return false;
@@ -165,6 +213,26 @@ function boxCheck(entry){
     return true;
 }
 
-window.document.body.onload = setEditableTrueAndValidateNumber;
 
+//function secondPassed() {
+//
+//    var minutes = Math.round((seconds - 30)/60);
+//    var remainingSeconds = seconds % 60;
+//    if (remainingSeconds < 1) {
+//        remainingSeconds = "0" + remainingSeconds;
+//    }
+//    document.getElementById('countdown').innerHTML = minutes + ":" + remainingSeconds;
+//    if (seconds == 5000) {
+//        clearInterval(countdownTimer);
+//        document.getElementById('countdown').innerHTML = "Buzz Buzz";
+//    } else {
+//        seconds++;
+//    }
+//}
+//
+//var countdownTimer = setInterval('secondPassed()', 1000);
+
+window.document.body.onload = setEditableTrueAndValidateNumber;
+//clearInterval(countdownTimer);
 document.getElementById("btnReset").addEventListener("click",reset);
+document.getElementById("btnSolution").addEventListener("click",showResult);
