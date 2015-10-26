@@ -1,45 +1,35 @@
 "use strict";
-//var seconds= 0;
-//var countdownTimer = setInterval('setEditableTrueAndValidateNumber()', 1000);
-function setEditableTrueAndValidateNumber() {
 
-    //var minutes = Math.round((seconds - 30)/60);
-    //var remainingSeconds = seconds % 60;
-    //if (remainingSeconds < 1) {
-    //    remainingSeconds = "0" + remainingSeconds;
-    //}
-    //document.getElementById('countdown').innerHTML = minutes + ":" + remainingSeconds;
-    //
-    //    seconds++;
+//making all the empty cell editable
+function setEditableTrue() {
+    var contentEditable = document.getElementsByClassName('editable');
+    for (var i = 0; i < contentEditable.length; i++) {
+        contentEditable[i].setAttribute('contenteditable', true);
+    }
+}
 
-      var contentEditable = document.getElementsByClassName('editable');
+
+function sudokuNumberValidationRule() {
+     setEditableTrue();
+     var contentEditable = document.getElementsByClassName('editable');
       for(var i=0; i < contentEditable.length; i++) {
-          contentEditable[i].setAttribute('contenteditable', true);
-          if(contentEditable[i].innerHTML != "&nbsp;&nbsp;"){
-              alert("Over");
-          }
           contentEditable[i].addEventListener('keyup', function () {
-
-
               if (validNumberCheck(this)) {
                   this.innerHTML = this.textContent;
 
+                  if(checkEnd(this)==true && i > contentEditable.length) {
+                      alert("Over");
+                  }
 
-                  //if(checkEnd(this)==false){
-                  //   alert("Over");
-                  //}
               }
               else
                   this.innerHTML = "&nbsp;&nbsp;";
           });
+
       }
-    //alert(contentEditable[0].innerHTML);
-
-
-
 }
 
-
+//reseting the board
 function reset(){
     var originalEmptyCell = document.getElementsByClassName('editable');
     for(var i=0; i<originalEmptyCell.length; i++) {
@@ -47,6 +37,7 @@ function reset(){
     }
 }
 
+//printing the result
 function showResult(){
     var resultVal =[1,2,8,9,6,7,6,2,4,7,1,8,9,8,9,5,4,6,
                     5,1,8,3,4,6,7,1,5,3,8,2,5,6,1,
@@ -59,6 +50,7 @@ function showResult(){
     }
 }
 
+//checking good number and also in row, column and box
 function validNumberCheck(curObj){
     var curObjValue = curObj.textContent.trim();
     var myRegExp = new RegExp(/^[1-9]$/);
@@ -105,17 +97,16 @@ function rowCheck(entry){
 
                 if(columnSelected != colNumber){
                     if (parseInt(entry.textContent) == colValue) {
+                        return false;
+                    }//end if
+                }//end if
 
-                    return false;
-                }
-                }
-
-            }
+            }//end for
 
             return true;
-        }//end for
+        }//end if
 
-    }
+    }//end for
     //end row checking
 }
 
@@ -141,21 +132,20 @@ function columnCheck(entry){
 
                         return false;
                     }//end if
-                }
+                }//end if
 
-            }
+            }//end for
 
             return true;
-        }//end for
+        }//end if
 
-    }
+    }//end for
     //end column checking
 }
 
 function checkEnd(entry){
 
     var classList = entry.classList;
-    var colNumber = classList[2]
 
     //checking row
     for(var i = 0; i < 9; i++) {
@@ -164,28 +154,19 @@ function checkEnd(entry){
 
             for (var j = 0; j < 9; j++) {
                 var rows = document.getElementsByClassName(rowSelected);
-
                 var rowValue = rows[j].innerHTML;
-
-                //if(columnSelected != colNumber){
                     if (rowValue =="&nbsp;&nbsp;") {
-
-                        return true;
+                        return false;
                    }
-                else return false;
-                //}
-
+                else return true;
             }
-
-            return true;
         }//end for
 
     }
-
-}
+  }
 
 function boxCheck(entry){
-    // get the row, column, and box class for the current entry
+    // get the box class for the current entry
     var classList = entry.classList;
     var boxNumber = classList[3];
     var colNumber = parseInt(classList[2].charAt(3));
@@ -208,31 +189,14 @@ function boxCheck(entry){
                    return false;
                }//end if
            }//end if
+
         }//end for
     }//end for
     return true;
 }
 
+window.document.body.onload =  sudokuNumberValidationRule();
 
-//function secondPassed() {
-//
-//    var minutes = Math.round((seconds - 30)/60);
-//    var remainingSeconds = seconds % 60;
-//    if (remainingSeconds < 1) {
-//        remainingSeconds = "0" + remainingSeconds;
-//    }
-//    document.getElementById('countdown').innerHTML = minutes + ":" + remainingSeconds;
-//    if (seconds == 5000) {
-//        clearInterval(countdownTimer);
-//        document.getElementById('countdown').innerHTML = "Buzz Buzz";
-//    } else {
-//        seconds++;
-//    }
-//}
-//
-//var countdownTimer = setInterval('secondPassed()', 1000);
-
-window.document.body.onload = setEditableTrueAndValidateNumber;
-//clearInterval(countdownTimer);
 document.getElementById("btnReset").addEventListener("click",reset);
+
 document.getElementById("btnSolution").addEventListener("click",showResult);
