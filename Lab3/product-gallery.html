@@ -1,9 +1,9 @@
 <div ng-show="product.images.length">
     <div class="img-wrap">
-        <img class="img-responsive center-block"  ng-src="{{product.images[gallery.current]}}" />
+        <img class="img-responsive center-block"  ng-src="{{product.images[0]}}" />
     </div>
     <ul class="img-thumbnails clearfix">
-        <li class="small-image pull-left thumbnail" ng-repeat="image in product.images">
+        <li class="small-image center-block pull-left thumbnail" ng-repeat="image in product.images">
             <img ng-src="{{image}}" style="width:75px;height:75px"/>
         </li>
     </ul>
