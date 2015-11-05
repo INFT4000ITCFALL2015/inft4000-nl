@@ -6,7 +6,7 @@
     <script type="text/javascript" src="app.js"></script>
 </head>
 
-<body ng-controller="StudentController as studentCtrl">
+<body ng-controller="StudentController">
 
 <h2>JAVASCRIPT OBJECT LAB-4 IN ANGULARJS</h2>
 <form name="studentForm" data-ng-submit="studentForm.$valid && addNewStudent()" novalidate>
@@ -20,7 +20,7 @@
     <student-details></student-details>
 </div>
 
-<div data-ng-class="targetJSON" data-show-json-report data-ng-show="showReport">{{studentJSON}}</div>
+<div ng-style="myStyle" data-show-json-report data-ng-show="showReport">{{studentJSON}}</div>
 <hr/>
 <footer>
     <p>Copyright &copy; 2015, Nayeema Mustaril</p>

@@ -1,4 +1,14 @@
 angular.module('studentApp',[]).controller('StudentController', function($scope) {
+    $scope.myStyle= {
+        "position": "absolute",
+        "left": "350px",
+        "top": "250px",
+        "z-index": "-1",
+        "width": "600px",
+        "height": "400px",
+        "border": "15px groove #8AC007"
+    }
+
     $scope.students = [];
     $scope.showReport= false;
     $scope.studentJSON = "";
