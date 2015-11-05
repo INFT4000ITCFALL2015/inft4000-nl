@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="studentApp">
+<head>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+</head>
+
+<body ng-controller="StudentController as studentCtrl">
+
+<h2>JAVASCRIPT OBJECT LAB-4 IN ANGULARJS</h2>
+<form name="studentForm" data-ng-submit="studentForm.$valid && addNewStudent()" novalidate>
+    <p><label>Student Id:</label><input type="number" placeholder="Enter a Student Id Please" data-ng-model="studentId" required/></p>
+    <p><label>First Name:</label><input type="text" placeholder="Enter a First Name Please" data-ng-model="fName" maxlength="20" required /></p>
+    <p><label>Last Name:</label><input type="text" placeholder="Enter a Last Name Please" data-ng-model="lName" maxlength="20" required/></p>
+    <input type="submit" value="Add" />
+</form>
+
+<div data-ng-mouseover="displayJSONReport()" data-ng-mouseout="hideReport()" data-ng-repeat="student in students">
+    <student-details></student-details>
+</div>
+
+<div data-ng-class="targetJSON" data-show-json-report data-ng-show="showReport">{{studentJSON}}</div>
+<hr/>
+<footer>
+    <p>Copyright &copy; 2015, Nayeema Mustaril</p>
+</footer>
+
+</body>
+</html>
+
