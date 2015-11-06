@@ -1,0 +1,27 @@
+{
+  "name": "Assignment2",
+  "version": "0.0.0",
+  "homepage": "https://github.com/INFT4000ITCFALL2015/inft4000-nl",
+  "authors": [
+    "Nayeema Lail <w0270771@nscc.ca>"
+  ],
+  "description": "students will be read in from the JSON file and stored in an array in a model as soon as the application loads. So, the application will display those students in the “list” on the web page as soon as the page loads and display in a table that is nicely formatted with Bootstrap. And add two innovative features in angularjs.",
+  "main": "index.html",
+  "keywords": [
+    "Students",
+    "AngularJS",
+    "JSONTable"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.7",
+    "bootstrap": "~3.3.5"
+  }
+}

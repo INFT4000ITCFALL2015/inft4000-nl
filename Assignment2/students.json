@@ -1,0 +1,29 @@
+{
+  "records": [
+    {
+      "studentId": 1,
+      "FirstName": "Alfreds",
+      "LastName": "Futterkiste"
+    },
+    {
+      "studentId": 2,
+      "FirstName": "Berglunds",
+      "LastName": "snabbköp"
+    },
+    {
+      "studentId": 3,
+      "FirstName": "Nayeema",
+      "LastName": "Lail"
+    },
+    {
+      "studentId": 4,
+      "FirstName": "Adiba",
+      "LastName": "Ali"
+    },
+    {
+      "studentId": 5,
+      "FirstName": "Muhammad",
+      "LastName": "Karim"
+    }
+  ]
+}
