@@ -1,17 +1,13 @@
-/**
- * Created by inet2005 on 11/3/15.
- */
-
 var app = angular.module('myApp', []);
 app.controller('StudentController', function($scope, $http) {
-    $http.get("students.json")
-        .success(function(response) {
-            $scope.students = response.records;
-        });
+    $scope.sortType     = 'name'; // set the default sort type
+    $scope.sortReverse  = false;  // set the default sort order
+    $scope.searchName   = '';     // set the default search/filter term
 
-    $scope.students = [];
+    $http.get("students.json").success(function(response) {
+        $scope.students = response.records;
+    });
 
-    var tempArray = $scope.students;
     $scope.addNewStudent = function () {
         var student = {
             studentId: $scope.studentId,
@@ -30,11 +26,11 @@ app.controller('StudentController', function($scope, $http) {
             });
             if (!oldStudentId) {
                 $scope.students.push(student);
-                tempArray.push({studentId: newStudentId, FirstName:$scope.fName, LastName:$scope.lName});
+                //tempArray.push({studentId: newStudentId, FirstName:$scope.fName, LastName:$scope.lName});
                 $scope.studentId ="";
                 $scope.fName ="";
                 $scope.lName ="";
             }//end if
         }//end if newStudentId
     };//addnewStudent function
-})
+});

@@ -1,53 +1,97 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Assignment 2 - Javascript Student Object in AngularJS and Showing it on a table</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+    <style>
+        body { padding-top:50px; }
+    </style>
+
+    <!-- JS -->
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="app.js"></script>
-    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
-</head>
-<body ng-controller="StudentController">
-<form name="studentForm" style="width:50%;margin-left:50px;" novalidate>
-    <h2>JAVASCRIPT OBJECT LAB-4 IN ANGULARJS</h2>
-    <div class="form-group">
-        <label>Student Id:</label>
-        <input type="number" class="form-control" placeholder="Student Id" data-ng-model="studentId" required/>
-    </div>
-    <div class="form-group">
-        <label>First Name:</label>
-        <input type="text" class="form-control" placeholder="First Name" data-ng-model="fName" maxlength="20" required />
-    </div>
 
-    <div class="form-group">
-        <label>Last Name:</label>
-        <input type="text" class="form-control" placeholder="Last Name" data-ng-model="lName" maxlength="20" required/>
-    </div>
-     <button data-ng-click="addNewStudent()" class="btn btn-primary">Add Student</button>
-</form>
-<hr>
-<div>
-    <table class="table table-bordered" style="margin-left:50px;height:200px;width:400px">
+</head>
+<body>
+<div class="container" ng-app="myApp" ng-controller="StudentController">
+    <form name="studentForm" novalidate>
+        <h2>JAVASCRIPT OBJECT LAB-4 IN ANGULARJS</h2>
+        <div class="form-group">
+            <label>Student Id:</label>
+            <input type="number" class="form-control" placeholder="Student Id" data-ng-model="studentId" required/>
+        </div>
+        <div class="form-group">
+            <label>First Name:</label>
+            <input type="text" class="form-control" placeholder="First Name" data-ng-model="fName" maxlength="20" required />
+        </div>
+
+        <div class="form-group">
+            <label>Last Name:</label>
+            <input type="text" class="form-control" placeholder="Last Name" data-ng-model="lName" maxlength="20" required/>
+        </div>
+        <button data-ng-click="addNewStudent()" class="btn btn-primary">Add Student</button>
+    </form>
+    <hr>
+   <form>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-search"></i></div>
+                <input type="text" class="form-control" placeholder="Search With Name" ng-model="searchName">
+            </div>
+        </div>
+    </form>
+
+    <hr>
+
+    <table class="table table-bordered table-striped">
+
         <thead>
         <tr>
-            <th>Student Id</th>
-            <th>First Name</th>
-            <th>Last Name</th>
+            <td>
+                <a href="#" ng-click="sortType = 'studentId'; sortReverse = !sortReverse">
+                    <b>Student Id</b>
+                    <span ng-show="sortType == 'studentId' && !sortReverse" class="fa fa-caret-down"></span>
+                    <span ng-show="sortType == 'studentId' && sortReverse" class="fa fa-caret-up"></span>
+                </a>
+            </td>
+
+            <td>
+                <a href="#" ng-click="sortType = 'FirstName'; sortReverse = !sortReverse">
+                    <b>First Name</b>
+                    <span ng-show="sortType == 'FirstName' && !sortReverse" class="fa fa-caret-down"></span>
+                    <span ng-show="sortType == 'FirstName' && sortReverse" class="fa fa-caret-up"></span>
+                </a>
+            </td>
+            <td>
+                <a href="#" ng-click="sortType = 'LastName'; sortReverse = !sortReverse">
+                    <b>Last Name</b>
+                    <span ng-show="sortType == 'LastName' && !sortReverse" class="fa fa-caret-down"></span>
+                    <span ng-show="sortType == 'LastName' && sortReverse" class="fa fa-caret-up"></span>
+                </a>
+            </td>
         </tr>
         </thead>
+
+
         <tbody>
-        <tr ng-repeat="student in students">
+        <tr ng-repeat="student in students | orderBy:sortType:sortReverse | filter:searchName">
             <td>{{ student.studentId }}</td>
             <td>{{ student.FirstName }}</td>
             <td>{{ student.LastName }}</td>
         </tr>
-
         </tbody>
+
     </table>
+
 </div>
 <hr/>
-<div id="footer" style="background:#ffab62;	height:200px;width:100%;bottom:0;left:0; text-align: center">
+<div id="footer" style="background:#e4b9c0;	height:200px;width:100%;bottom:0;left:0; text-align: center">
     Copyright &copy; 2015, Nayeema Mustaril
 </div>
 </body>
 </html>
+  
