@@ -33,4 +33,21 @@ app.controller('StudentController', function($scope, $http) {
             }//end if
         }//end if newStudentId
     };//addnewStudent function
+
+    $scope.removeRow = function(studentId){
+        var index = -1;
+        var comArr = eval( $scope.students );
+        for( var i = 0; i < comArr.length; i++ ) {
+            if( comArr[i].studentId === studentId ) {
+                index = i;
+                break;
+            }
+        }
+        if( index === -1 ) {
+            alert( "Something gone wrong" );
+        }
+        $scope.students.splice( index, 1 );
+    };
+
+
 });
