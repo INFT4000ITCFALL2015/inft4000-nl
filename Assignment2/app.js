@@ -1,4 +1,5 @@
 var app = angular.module('myApp', []);
+
 app.controller('StudentController', function($scope, $http) {
     $scope.sortType     = 'name'; // set the default sort type
     $scope.sortReverse  = false;  // set the default sort order
@@ -49,5 +50,36 @@ app.controller('StudentController', function($scope, $http) {
         $scope.students.splice( index, 1 );
     };
 
-
 });
+
+app.filter('capitalize', function() {
+    return function(input) {
+        return (!!input) ? input.charAt(0).toUpperCase() + input.substr(1).toLowerCase() : '';
+    }
+});
+
+app.directive('numbersOnly', [
+    function(){ // limit the input field to numbers only, but retain value as string
+        return {
+            require: 'ngModel',
+            link: function(scope, element, attrs, modelCtrl) {
+
+                modelCtrl.$parsers.push(function (inputValue) {
+
+                    var transformedInput = inputValue;
+                    transformedInput = transformedInput.replace(/\D/g,'');
+
+                    if(transformedInput)
+                        transformedInput = parseInt(transformedInput)+"";
+
+                    if (transformedInput!=inputValue) {
+                        modelCtrl.$setViewValue(transformedInput);
+                        modelCtrl.$render();
+                    }
+
+                    return transformedInput;
+                });
+            }
+        };
+    }
+])
