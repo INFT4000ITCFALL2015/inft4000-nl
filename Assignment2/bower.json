@@ -1,6 +1,6 @@
 {
   "name": "Assignment2",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "homepage": "https://github.com/INFT4000ITCFALL2015/inft4000-nl",
   "authors": [
     "Nayeema Lail <w0270771@nscc.ca>"
@@ -16,7 +16,11 @@
     "Sort",
     "Bootstrap",
     "Font-Awesome",
-    "Jquery"
+    "Jquery",
+    "Custom",
+    "Directive",
+    "Custom",
+    "filter"
   ],
   "license": "MIT",
   "ignore": [
