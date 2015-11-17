@@ -81,7 +81,7 @@
 
 
         <tbody>
-        <tr ng-repeat="student in students | orderBy:sortType:sortReverse | filter:searchName">
+        <tr ng-mouseover="displayJSONReport()" data-ng-mouseout="hideReport()" ng-repeat="student in students | orderBy:sortType:sortReverse | filter:searchName">
             <td>{{ student.studentId }}</td>
             <td>{{ student.FirstName | capitalize}}</td>
             <td>{{ student.LastName | capitalize}}</td>
@@ -93,8 +93,14 @@
         </tbody>
 
     </table>
+    <!--<div data-ng-mouseover="displayJSONReport()" data-ng-mouseout="hideReport()" data-ng-repeat="student in students">
+        <student-details></student-details>
+    </div>-->
 
+    <div ng-style="myStyle" data-show-json-report data-ng-show="showReport">{{studentJSON}}</div>
 </div>
+
+
 <hr/>
 <div id="footer" style="background:#e4b9c0;	height:200px;width:100%;bottom:0;left:0; text-align: center">
     Copyright &copy; 2015, Nayeema Mustaril
