@@ -10,7 +10,7 @@ app.controller('StudentController', function($scope, $http) {
         "top": "450px",
         "z-index": "-1",
         "width": "600px",
-        "height": "400px",
+        "height": "200px",
         "border": "15px groove #8AC007"
     }
 
@@ -108,10 +108,3 @@ app.directive('numbersOnly', [
         };
     }
 ])
-
-    .directive("studentDetails", function() {
-        return {
-            restrict: 'E',
-            templateUrl: "student-details.html"
-        };
-    });// end of directive code
