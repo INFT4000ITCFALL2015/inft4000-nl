@@ -1,5 +1,5 @@
 {
-  "name": "Lab6",
+  "name": "lab6",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -11,7 +11,22 @@
     "debug": "~2.2.0",
     "ejs": "~2.3.3",
     "express": "~4.13.1",
+    "express-myconnection": "^1.0.4",
     "morgan": "~1.6.1",
+    "mysql": "^2.9.0",
     "serve-favicon": "~2.3.0"
-  }
+  },
+  "description": "Implementing full CRUD for the Employees table of the Employees sample database and be able to test your RESTful API via Postman.",
+  "main": "app.js",
+  "devDependencies": {},
+  "keywords": [
+    "Employees",
+    "JSON",
+    "API",
+    "Express",
+    "CRUD",
+    "RESTful"
+  ],
+  "author": "Nayeema Lail",
+  "license": "ISC"
 }
