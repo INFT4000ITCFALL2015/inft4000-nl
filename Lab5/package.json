@@ -1,0 +1,22 @@
+{
+  "name": "lab5",
+  "version": "1.0.0",
+  "description": "learn you node lab",
+  "main": "no",
+  "dependencies": {
+    "bl": "^1.0.0",
+    "through2-map": "^2.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "JSON",
+    "POST",
+    "Node",
+    "API"
+  ],
+  "author": "Nayeema Lail",
+  "license": "ISC"
+}
