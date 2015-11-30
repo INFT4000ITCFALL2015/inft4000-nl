@@ -2,40 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e658f5a-b160-4fa8-9f02-ef93ccab5005" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/AngularAPIClientEmployee.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../AngularToDoDemoMike/.idea/AngularToDoDemoMike.iml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JSONDemo/.idea/JSONDemo.iml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Lab6/.idea/libraries/Lab6_node_modules.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../NodeAPIDemo/controllers/actorController.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../test/app.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../NodeAPIDemo/.idea/runConfigurations/bin_www.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bower.json" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../AngularJSONTable/customers.json" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../test/data.json" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Lab6/controllers/employeeController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/index.html" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../AngularJSONTable/index.html" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../AngularToDoDemoMike/index.html" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../test/index.html" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../NodeAPIDemo/.idea/jsLibraryMappings.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JSONDemo/jsonDemon.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../AngularToDoDemoMike/.idea/misc.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JSONDemo/.idea/misc.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../test/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../AngularToDoDemoMike/.idea/modules.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JSONDemo/.idea/modules.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../test/.idea/modules.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../AngularJSONTable/script.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../AngularToDoDemoMike/scripts.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../NodeDemo/server.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../test/.idea/test.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../AngularToDoDemoMike/.idea/vcs.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JSONDemo/.idea/vcs.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../test/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../AngularToDoDemoMike/.idea/workspace.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JSONDemo/.idea/workspace.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../test/.idea/workspace.xml" />
@@ -55,6 +50,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../NodeAPIDemo/package.json" afterPath="$PROJECT_DIR$/../NodeAPIDemo/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Lab2/script.js" afterPath="$PROJECT_DIR$/../Lab2/script.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Lab1/scripts.js" afterPath="$PROJECT_DIR$/../Lab1/scripts.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Assignment2/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Assignment2/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Lab1FinalVersion/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Lab1FinalVersion/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Lab2/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Lab2/.idea/workspace.xml" />
@@ -247,6 +243,13 @@
       <option name="number" value="Default" />
       <updated>1448888773307</updated>
     </task>
+    <task id="LOCAL-00001" summary="Lab 6 - REST operation done using Nodejs except create havnig some issues in inserting employee_id">
+      <created>1448890092329</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1448890092329</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -255,6 +258,7 @@
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24947146" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -277,6 +281,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Lab 6 - REST operation done using Nodejs except create havnig some issues in inserting employee_id" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lab 6 - REST operation done using Nodejs except create havnig some issues in inserting employee_id" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
