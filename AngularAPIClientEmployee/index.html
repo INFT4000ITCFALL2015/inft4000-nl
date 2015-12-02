@@ -2,25 +2,81 @@
 <html lang="en" ng-app="myApp">
 <head>
     <meta charset="UTF-8">
-    <title>Angular API Client For Employee</title>
+    <title>Angular API Client</title>
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
-    <script src="bower_components/angularjs/angular.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.min.js"></script>
     <script src="scripts.js"></script>
+    <style type="text/css">
+        body {
+            margin-left:100px;
+        }
+        #employeeReport {
+            position: fixed;
+            top: 200px;
+            left: 200px;
+            width: 400px;
+            background-color: moccasin;
+        }
+    </style>
 </head>
 <body ng-controller="employeeController">
-    <table class="table table-bordered">
-        <thead>
-            <th>Employee ID</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-        </thead>
-        <tbody>
-            <tr ng-repeat="employee in employees">
-                <td>{{employee.emp_no}}</td>
-                <td>{{employee.first_name}}</td>
-                <td>{{employee.last_name}}</td>
-            </tr>
-        </tbody>
-    </table>
+<h1 class="bg-success" style="width:850px ">Last Operation Status: {{message}}</h1>
+<div id="employeeReport" ng-show="displayReport" ng-click="hideReport()">
+    <p>Employee ID: {{selectedEmployee.emp_no}}</p>
+    <p>First Name: {{selectedEmployee.first_name}}</p>
+    <p>Last Name: {{selectedEmployee.last_name}}</p>
+</div>
+<form ng-submit="addEmployee()" style="width:850px ">
+    <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" class="form-control" id="firstName" placeholder="First Name" ng-model="newFirstName">
+    </div>
+    <div class="form-group">
+        <label for="lastName">First Name</label>
+        <input type="text" class="form-control" id="lastName" placeholder="Last Name" ng-model="newLastName">
+    </div>
+    <div class="form-group">
+        <label for="birth_date">Birth Date</label>
+        <input type="date" class="form-control" id="birth_date" placeholder="Birth Date" ng-model="newBirthDate">
+    </div>
+    <div class="form-group">
+        <label for="hire_date">Hire Date</label>
+        <input type="date" class="form-control" id="hire_date" placeholder="Hire Date" ng-model="newHireDate">
+    </div>
+
+    <label>Gender</label>
+    <div ng-repeat="gender in genders">
+        <input id="{{gender.value}}" type="checkbox" value="{{gender.value}}" ng-checked="selection.indexOf(gender.value) > -1"
+               ng-click="toggleSelection(gender.value)" />
+        <label for="{{gender.value}}"></label>
+        {{gender.value}}
+
+    </div>
+
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
+<hr />
+<button ng-click="refreshEmployees()">Refresh Table</button>
+<table class="table table-bordered" style="width:850px ">
+    <thead>
+    <th>Employee ID</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    </thead>
+    <tbody>
+    <tr ng-repeat="employee in employees">
+        <td>{{employee.emp_no}}</td>
+        <td contenteditable="true" id="updateEmployeeFName{{employee.emp_no}}">{{employee.first_name}}</td>
+        <td contenteditable="true" id="updateEmployeeLName{{employee.emp_no}}">{{employee.last_name}}</td>
+        <td><img src="images/info.png" ng-click="showEmployee(employee.emp_no)"/></td>
+        <td><img src="images/save.png" ng-click="updateEmployee(employee.emp_no)"/></td>
+        <td><img src="images/erase.png" ng-click="deleteEmployee(employee.emp_no)"/></td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>
