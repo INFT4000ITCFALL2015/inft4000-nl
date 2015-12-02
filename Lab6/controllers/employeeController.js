@@ -21,47 +21,36 @@ module.exports.index = function(req, res) {
 };
 
 
-//module.exports.create =function(req, res) {
-//
-//    console.log("Inside of the module - creating method");
-//    var input = JSON.parse(JSON.stringify(req.body));
-//
-//    req.getConnection(function (err, connection) {
-//
-//        var query = connection.query('SELECT MAX(emp_no) as Employee_id FROM employees',  function(err, results) {
-//            if (err){
-//                return next(err);
-//            }
-//
-//            //console.log(results[0]);
-//
-//
-//            var data = {
-//                emp_no: input.results['Employee_id'],
-//                first_name: input.first_name,
-//                last_name: input.last_name,
-//                birth_date: input.birth_date,
-//                hire_date: input.hire_date,
-//                gender: input.gender
-//            };
-//
-//            var query = connection.query("INSERT INTO employees set ? ", data, function (err, rows) {
-//
-//                if (err) {
-//                    console.log("Error inserting : %s ", err);
-//                }
-//                else {
-//                    res.json({message: 'employee created!'});
-//                }
-//
-//            });
-//        });
-//        console.log(query.sql);
-//
-//    });
-//
-//};
+module.exports.create = function(req, res) {
 
+    console.log("In controller store method...");
+
+    var input = JSON.parse(JSON.stringify(req.body));
+
+    req.getConnection(function (err, connection) {
+
+        var data = {
+            first_name: input.first_name,
+            last_name: input.last_name,
+            birth_date: input.birth_date,
+            hire_date: input.hire_date,
+            gender: input.gender
+        };
+
+        var query = connection.query("INSERT INTO employees set ? ", data, function (err, rows) {
+
+            if (err) {
+                console.log("Error inserting : %s ", err);
+            }
+            else {
+                res.json({message: 'Employee created!'});
+            }
+
+        });
+
+        console.log(query.sql);
+    });
+};
 
 module.exports.show = function(req, res) {//getting the connection
     console.log("Inside of the module - show method");

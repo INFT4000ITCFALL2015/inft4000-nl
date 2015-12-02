@@ -3,14 +3,15 @@ var router = express.Router();
 var employeeController = require('../controllers/employeeController');
 // get an instance of the express Router
 
-// middleware to use for all requests
 router.use(function(req, res, next) {
     // do logging
     console.log('Something is happening.');
 
     //allows cross-origin resource sharing
     res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS');
+    //res.header("Access-Control-Allow-Headers", "X-Requested-With");
     next(); // make sure we go to the next routes and don't stop here
 });
 
@@ -30,7 +31,7 @@ router.get('/', function(req, res) {
 router.route('/employees')
 
     // create an employee (accessed at POST http://localhost:3000/api/employees)
-    //.post(employeeController.create)
+    .post(employeeController.create)
 
     // get all the employees (accessed at GET http://localhost:3000/api/employees)index
     .get(employeeController.index)
