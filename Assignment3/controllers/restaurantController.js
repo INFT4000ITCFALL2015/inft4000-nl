@@ -5,7 +5,7 @@
 var mongoose   = require('mongoose');
 mongoose.connect('mongodb://localhost/test/bears'); // connect to our database
 
-var Restaurant = require('../models/Retaurant');
+var Restaurant = require('../models/Restaurant');
 
 module.exports.store = function(req, res) {
 
